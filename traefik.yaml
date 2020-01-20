@@ -1,0 +1,10 @@
+http:
+  routers:
+    whoami:
+      rule: "Path(`/whoami`)"
+      service: whoami
+  services:
+    whoami:
+      loadBalancer:
+        servers:
+          - url: "http://host.docker.internal:5001"
